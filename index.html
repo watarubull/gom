@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>GHOST ON THE MAP</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header id="page-header">
+    <div class="inner">
+      <h1 class="title">GHOST ON THE MAP</h1>
+    </div>
+  </header>
+  <main><div class="inner">
+    <div class="inputArea">
+      <input type="text" id="title" placeholder="タイトル" />
+      <textarea name="text" id="text" placeholder="内容"></textarea>
+      <button id="save">保存</button>
+      <button id="allclear">全て削除</button>
+      <button id="clear">選択したデータを削除</button>
+      <button id="map">地図を表示</button>
+    </div>
+    <div class="storageArea">
+      <ul class="storage-list"></ul>
+    </div>
+  </div></main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./memo.js"></script>
+
+</body>
+
+</html>

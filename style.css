@@ -1,0 +1,150 @@
+@charset "UTF-8";
+/* default
+--------------------------------------------------------*/
+body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #333333;
+  font-size: 16px;
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, Meiryo, "メイリオ", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic",  Osaka, sans-serif;
+  line-height: 1.6;
+  background-color: #1a1a1a;
+}
+
+@media screen and (max-width: 1140px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+* {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header, footer, section, article, aside, nav,
+figure, figcaption, main {
+  display: block;
+}
+
+ul, ol, dl, li, dt, dd {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+a, a:visited {
+  color: #000;
+  text-decoration: none;
+  transition: opacity .4s;
+}
+
+:focus {
+  outline: none;
+}
+
+.hover {
+  transition: opacity .4s;
+  cursor: pointer;
+}
+
+a:hover, .hover:hover {
+  opacity: 0.5;
+}
+
+/* 基本
+--------------------------------------------------------*/
+main .inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#page-header .inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 60px;
+  font-size: 18px;
+}
+
+#page-header .inner .title {
+  color: #7a0202;
+}
+
+.inputArea {
+  width: 640px;
+}
+
+.inputArea > * + * {
+  margin-top: 20px;
+}
+
+#title {
+  display: block;
+  width: 100%;
+  height: 45px;
+  padding: 0.5em;
+  border: solid 1px #7a0202;
+  background-color: #EFEFEF;
+}
+
+#text {
+  display: block;
+  width: 100%;
+  height: 640px;
+  padding: 0.5em;
+  border: solid 1px #7a0202;
+  background-color: #EFEFEF;
+}
+
+.storageArea {
+  width: 320px;
+  padding: 30px;
+  border: solid 1px #7a0202;
+  background-color: #EFEFEF;
+}
+
+.storageArea .storage-list li {
+  padding: 10px;
+  border: solid 2px #ccc;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.storageArea .storage-list li + li {
+  margin-top: 5px;
+}
+
+.storageArea .storage-list li .key {
+  display: none;
+}
+
+.storageArea .storage-list li.on {
+  border-color: #7a0202;
+}
+
+:focus {
+  outline: none;
+  background-color: #efefef;
+}
+/*# sourceMappingURL=style.css.map */

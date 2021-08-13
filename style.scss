@@ -1,0 +1,164 @@
+@charset "utf-8";
+
+$black: #1a1a1a;
+$white: #FFF;
+$gray: #999;
+$gray02: #EFEFEF;
+$gray03: #AAAAAA;
+$gray04: #EEEEEE;
+$bg-gray: #FAFAFA;
+$bg-gray02: #707070;
+$yellow: #FFD61A;
+$colorMain: #278cfa;
+$colorA: #7a0202;
+$colorB: #019F7B;
+
+// max-width
+$breakpoint-down: (
+  'xs': 'screen and (max-width: 320px)',
+  'sm': 'screen and (max-width: 375px)',
+  'md': 'screen and (max-width: 768px)',
+  'lg': 'screen and (max-width: 960px)',
+  'xl': 'screen and (max-width: 1140px)',
+) !default;
+
+@mixin mq-down($bp: md) {
+  @media #{map-get($breakpoint-down, $bp)} {
+    @content;
+  }
+}
+@mixin flexBase($direction: row,$justify:space-between,$align:flex-start,$wrap:wrap) {
+  display: flex;
+  flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+	flex-wrap: $wrap;
+}
+@mixin posiCenter($posiX:-50%,$posiY:-50%){
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate($posiX,$posiY);
+}
+@mixin baElement($content:"") {
+  content: $content;
+  display: block;
+}
+
+
+/* default
+--------------------------------------------------------*/
+
+body {
+  overflow-x: hidden;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	color: #333333;
+	font-size: 16px;
+	font-family:  "游ゴシック体", "Yu Gothic", YuGothic, Meiryo, "メイリオ", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic",  Osaka, sans-serif;
+	line-height: 1.6;
+  @include mq-down($bp:xl){
+    font-size: 15px;
+  }
+  background-color: $black;
+}
+*{
+  font-size: 1em;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+header, footer, section, article, aside, nav,
+figure, figcaption, main {display: block;}
+ul,ol,dl,li,dt,dd{list-style: none;}
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	padding: 0;
+	margin: 0;
+	border:none;
+}
+a,a:visited{
+	color: #000;
+	text-decoration: none;
+	-webkit-transition:opacity .4s;
+	transition:opacity .4s;
+}
+:focus{outline:none;}
+.hover{-webkit-transition:opacity .4s;transition:opacity .4s;cursor: pointer;}
+a:hover,.hover:hover{opacity: 0.5;}
+
+/* 基本
+--------------------------------------------------------*/
+main{
+  .inner{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+  
+}
+.inner{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+#page-header{
+  .inner{
+    @include flexBase($align:center);
+    height: 60px;
+    font-size: 18px;
+    .title{
+      color: $colorA;
+    }
+  }
+}
+.inputArea{
+  width: 640px;
+}
+.inputArea>*+*{
+  margin-top: 20px;
+}
+#title{
+  display: block;
+  width: 100%;
+  height: 45px;
+  padding: 0.5em;
+  border: solid 1px $colorA;
+  background-color: $gray02;
+}
+#text{
+  display: block;
+  width: 100%;
+  height: 640px;
+  padding: 0.5em;
+  border: solid 1px $colorA;
+  background-color: $gray02;
+}
+.storageArea{
+  width: 320px;
+  padding: 30px;
+  border: solid 1px $colorA;
+  background-color: $gray02;
+  .storage-list{
+    li{
+      padding: 10px;
+      border: solid 2px #ccc;
+      border-radius: 10px;
+      background-color: #f1f1f1;
+      &+li{margin-top: 5px;}
+      .key{
+        display: none;
+      }
+      cursor: pointer;
+      &.on{
+        border-color: $colorA;
+      }
+    }
+  }
+}
+:focus{
+  outline: none;
+  background-color: #efefef;
+}
